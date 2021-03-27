@@ -1,15 +1,18 @@
+import Head from 'next/head'
 import Link from 'next/link'
-import Layout from '../components/Layout'
+import { Title, Text, AButton } from '../theme/components';
 
 const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
+  <>
+    <Head>
+      <title>Ninja List | Home</title>
+      <meta name="keywords" content="ninjas"/>
+    </Head>
+    <Title>Homepage</Title>
+    <Text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae officia quaerat animi minus iure labore libero eligendi aliquid, assumenda tempore ipsam, rem quis recusandae odit itaque tenetur harum sequi blanditiis.</Text>
+    <Text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae officia quaerat animi minus iure labore libero eligendi aliquid, assumenda tempore ipsam, rem quis recusandae odit itaque tenetur harum sequi blanditiis.</Text>
+    <Link href='/ninjas'><AButton>Ninja Listing</AButton></Link>
+  </>
 )
 
 export default IndexPage

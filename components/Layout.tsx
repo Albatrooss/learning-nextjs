@@ -1,41 +1,30 @@
 import React, { ReactNode } from 'react'
-import Link from 'next/link'
 import Head from 'next/head'
+import Footer from './Footer'
+import Navbar from './Navbar'
+import styled from 'styled-components'
 
 type Props = {
   children?: ReactNode
-  title?: string
 }
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
-  <div>
-    <Head>
-      <title>{title}</title>
+const Content = styled.div`
+  max-width: 960px;
+  margin: 0 auto;
+`;
+
+const Layout = ({ children }: Props) => (
+  <Content>
+    <Head key='123'>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+      <link href={"https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"} rel="stylesheet"></link>
     </Head>
-    <header>
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/about">
-          <a>About</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/users">
-          <a>Users List</a>
-        </Link>{' '}
-        | <a href="/api/users">Users API</a>
-      </nav>
-    </header>
+    <Navbar />
     {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
-  </div>
+    <Footer />
+  </Content>
 )
 
-export default Layout
+export default Layout;
